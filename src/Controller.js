@@ -4,7 +4,7 @@ class Controller {
     this.view = view;
 
     this.view.bindFunction(this.sendClickEvent);
-    this.model.bindFunction(this.sendInputUpdate, this.sendOutputUpdate);
+    this.model.bindFunction(this.sendInputUpdate);
   }
 
   sendClickEvent = (keyValue) => {
@@ -13,10 +13,6 @@ class Controller {
 
   sendInputUpdate = (currentData) => {
     this.view.updateOutput(currentData);
-  }
-
-  sendOutputUpdate = (output) => {
-    this.view.updateOutput(output);
   }
 }
 
