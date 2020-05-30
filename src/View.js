@@ -1,16 +1,25 @@
-console.log('View');
-
-export default class View {
-  constructor() {
-    this.app = this.querySelector('#app');
+class View {
+  constructor () {
+    this.inputKeys = [...document.querySelectorAll('[js-calculator="key"]')];
+    this.outputArea = document.querySelector('[data-output]');
+    this._initListeners();
   }
 
-  querySelector(selector) {
-    const element = document.querySelector(selector);
-    return element;
+  _initListeners() {
+    this.inputKeys.forEach((key) => {
+      key.addEventListener('click', () => {
+        this.sendClickEvent(key.dataset.button);
+      })
+    })
   }
 
-  // display list
+  updateOutput(currentData) {
+    this.outputArea.textContent = currentData;
+  }
 
-  // bindadd
+  bindFunction(callback) {
+    this.sendClickEvent = callback;
+  }
 }
+
+export default View;

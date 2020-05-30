@@ -1,16 +1,23 @@
-console.log('Controller');
-
-export default class Controller {
+class Controller {
   constructor(model, view) {
     this.model = model;
     this.view = view;
 
-    // bind model.change
-    // bind view.add
-    // this.onchange(model.list) - to render on start
+    this.view.bindFunction(this.sendClickEvent);
+    this.model.bindFunction(this.sendInputUpdate, this.sendOutputUpdate);
   }
 
-  // => onchange view.display
+  sendClickEvent = (keyValue) => {
+    this.model.registerClickEvent(keyValue);
+  }
 
-  // => handleadd model.add
+  sendInputUpdate = (currentData) => {
+    this.view.updateOutput(currentData);
+  }
+
+  sendOutputUpdate = (output) => {
+    this.view.updateOutput(output);
+  }
 }
+
+export default Controller;
