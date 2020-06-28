@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Calculator</title>
+  </head>
+  <style>
+    body, html {
+      background: #000;
+    }
+    .calculator {
+      background-color: grey;
+      box-shadow: 0px 20px 50px rgba(255, 255, 255, 0.5);
+      font-family: monospace;
+      margin: 0 auto;
+      width: 500px;
+    }
+
+    .calculator__output {
+      background-color: black;
+      color: greenyellow;
+      font-size: 25px;
+      padding: 1rem;
+      width: calc(100% - 2rem);
+    }
+
+    .calculator__input-group {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .calculator__input {
+      cursor: pointer;
+      font-size: 30px;
+      padding: 2rem;
+      width: calc(100% / 3);
+    }
+
+    .calculator__input:hover {
+      background-color: black;
+      color: pink;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <div class="calculator">
+        <div class="calculator__output">
+          <span data-output>Output</span>
+        </div>
+        <div class="calculator__input-group">
+          <button class="calculator__input" js-calculator="key" data-button="0">0</button>
+          <button class="calculator__input" js-calculator="key" data-button="1">1</button>
+          <button class="calculator__input" js-calculator="key" data-button="2">2</button>
+          <button class="calculator__input" js-calculator="key" data-button="3">3</button>
+          <button class="calculator__input" js-calculator="key" data-button="4">4</button>
+          <button class="calculator__input" js-calculator="key" data-button="5">5</button>
+          <button class="calculator__input" js-calculator="key" data-button="6">6</button>
+          <button class="calculator__input" js-calculator="key" data-button="7">7</button>
+          <button class="calculator__input" js-calculator="key" data-button="8">8</button>
+          <button class="calculator__input" js-calculator="key" data-button="9">9</button>
+        </div>
+        <div class="calculator__input-group">
+          <button class="calculator__input" js-calculator="key" data-button="-">-</button>
+          <button class="calculator__input" js-calculator="key" data-button="+">+</button>
+          <button class="calculator__input" js-calculator="key" data-button="=">=</button>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
