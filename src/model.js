@@ -10,7 +10,15 @@ class Model {
       return;
     }
     this.currentInput.push(keyValue);
-    this.sendInputUpdate(this.currentInput);
+    this.sendInputUpdate(this.convertArrayToString(this.currentInput));
+  }
+
+  convertArrayToString(data) {
+    let outputData = data
+    if (Array.isArray(data)) {
+      outputData = data.join('').toString()
+    }
+    return outputData
   }
 
   registerClickEvent(keyValue) {
